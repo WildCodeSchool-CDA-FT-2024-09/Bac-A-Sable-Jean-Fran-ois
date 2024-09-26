@@ -1,0 +1,21 @@
+{
+  "name": "bac-a-sable-jean-francois",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "scripts": {
+    "dev": "ts-node-dev ./index.ts",
+    "fetch": "gh repo list youns28100 --json id,name,languages,isPrivate,url > ./data/data.json",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "express": "^4.21.0",
+    "ts-node-dev": "^2.0.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5"
+  }
+}
