@@ -6,7 +6,9 @@
     "dev": "ts-node-dev ./index.ts",
     "create": "ts-node-dev ./data/create.ts",
     "fetch": "gh repo list youns28100 --json id,name,languages,isPrivate,url > ./data/raw.json",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "seed": "ts-node-dev ./data/seed.ts",
+    "full": "pnpm run fetch && pnpm run create && pnpm run seed && pnpm run dev"
   },
   "author": "",
   "license": "ISC",
@@ -19,6 +21,7 @@
     "zod": "^3.23.8"
   },
   "dependencies": {
+    "class-validator": "^0.14.1",
     "dotenv": "^16.4.5",
     "reflect-metadata": "^0.2.2",
     "sqlite3": "^5.1.7",

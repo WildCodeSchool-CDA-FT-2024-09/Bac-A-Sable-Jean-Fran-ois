@@ -1,10 +1,13 @@
 import "dotenv/config";
 import { app } from "./src/app";
-const port = process.env.APP_PORT;
+import { myDataSource } from "./database";
+
+const { APP_PORT } = process.env;
 
 app
-  .listen(port, () => {
-    console.info(`App is listening on http://localhost:${port}/`);
+  .listen(APP_PORT, async () => {
+    myDataSource.initialize();
+    console.info(`App is listening on http://localhost:${APP_PORT}/`);
   })
   .on("error", (err) => {
     console.error("Error:", err.message);
